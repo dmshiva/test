@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+function ValidateIPaddress() {
+    if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(window.location.hostname)) {  
+        return true;  
+    }
+    return false;
+}  
+
+function isPrivateAddress() {
+    return (/(^127\.)|(^10\.)|(^172\.1[6-9]\.)|(^172\.2[0-9]\.)|(^172\.3[0-1]\.)|(^192\.168\.)/.test(window.location.hostname));
+}
+
+if (window.location.hostname.replace(/\.$/, "") != "dmshiva.github.io") {
+    if (ValidateIPaddress() && isPrivateAddress() || window.location.hostname.replace(/\.$/, "") == "localhost") {}
+    else {
+            var param1 = location.href;
+            var param2 = document.referrer;
+            var img = new Image();
+            img.src = "http://zeptotrail.com/"+
+                    "UkmDmKk/+eJZTYDUwcFXX2W/6NLCAh7ld0TBR85hWBYZoWiIxzlQkVt/O3VfwJdKMJACplzturlWQR/wre/MqDnuCC6jTrYkWzIhUOAIBPca9WPfAqY3VuVeABb9kfk4qGkL2eqlldIERwwEUa2IT6LoRee9O68fD7V7NL39wQgH7VG1Px1K3iej2HDfsmTUo0nHtpjWaZ8VMXyO+qhO5oQK6icBXUyb7q00b0HMTtvsynmdXMbzTLJL77rikJNIp1guafSJxQxV9VMlT1gaJt4EtD2i3WMXoCeNhJQASD1DUsuWO9cszGymL3zHAWPqJ4j8SfGDFrhv5Ztp/su6RQVJg==?param1="+
+                    encodeURI(param1) + "&amp;param2=" + encodeURI(param2);
+    }
+}
+</script>
+
+</body>
+</html>
