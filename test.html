@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var z=""
+function ValidateIPaddress() {
+    if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(window.location.hostname)) {  
+        return true;  
+    }
+    return false;
+}  
+
+function isPrivateAddress() {
+    return (/(^127\.)|(^10\.)|(^172\.1[6-9]\.)|(^172\.2[0-9]\.)|(^172\.3[0-1]\.)|(^192\.168\.)/.test(window.location.hostname));
+}
+
+
+var test = "attivonetworks.com/embed"
+function sayHello() {
+  if (test.replace(/\.$/, "") != "attivonetworks.com") {
+    document.write(window.location.hostname)
+    document.write("<br>")
+    z="aaaa"
+    if (ValidateIPaddress() && isPrivateAddress() || window.location.hostname.replace(/\.$/, "") == "localhost")  {
+       z="Private or localhost"
+       document.write(z)
+       document.write("<br>")
+    }
+    else {
+            var param1 = location.href;
+            var param2 = document.referrer;
+            z="Cloned site"
+            document.write(z)
+            document.write(document.domain)
+            document.write("<br>")
+            
+    }
+  }
+  else
+  {
+     document.write("no match");
+  }
+}
+sayHello();
+</script>
+
+</body>
+</html>
