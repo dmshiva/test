@@ -18,10 +18,9 @@ function isPrivateAddress() {
 }
 
 
-var test = "attivonetworks.com/embed"
+var test = "attivonetworks.com"
 function sayHello() {
   if (test.replace(/\.$/, "") != "attivonetworks.com") {
-    document.write(window.location.hostname)
     document.write("<br>")
     z="aaaa"
     if (ValidateIPaddress() && isPrivateAddress() || window.location.hostname.replace(/\.$/, "") == "localhost")  {
@@ -34,9 +33,7 @@ function sayHello() {
             var param2 = document.referrer;
             z="Cloned site"
             document.write(z)
-            document.write(document.domain)
             document.write("<br>")
-            
     }
   }
   else
