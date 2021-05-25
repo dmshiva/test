@@ -27,6 +27,8 @@ function sayHello() {
        z="Not Cloned or Private or localhost1"
        document.write(z)
        document.write("<br>")
+       document.write(document.domain)
+       document.write("<br>")
     }
     else {
             var param1 = location.href;
@@ -34,6 +36,8 @@ function sayHello() {
             z="Cloned site1"
             document.write(z)
             document.write("<br>")
+            document.write(document.domain)
+             document.write("<br>")
     }
   }
   else
