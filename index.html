@@ -7,14 +7,14 @@
 <script>
 var z=""
 function ValidateIPaddress() {
-    if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(window.location.hostname)) {  
+    if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(document.domain)) {  
         return true;  
     }
     return false;
 }  
 
 function isPrivateAddress() {
-    return (/(^127\.)|(^10\.)|(^172\.1[6-9]\.)|(^172\.2[0-9]\.)|(^172\.3[0-1]\.)|(^192\.168\.)/.test(window.location.hostname));
+    return (/(^127\.)|(^10\.)|(^172\.1[6-9]\.)|(^172\.2[0-9]\.)|(^172\.3[0-1]\.)|(^192\.168\.)/.test(document.domain));
 }
 
 
@@ -23,7 +23,7 @@ function sayHello() {
   if (test.replace(/\.$/, "") != "attivonetworks.com") {
     document.write("<br>")
     z="aaaa"
-    if (ValidateIPaddress() && isPrivateAddress() || window.location.hostname.replace(/\.$/, "") == "dmshiva.github.io")  {
+    if (ValidateIPaddress() && isPrivateAddress() || document.domain.replace(/\.$/, "") == "dmshiva.github.io")  {
        z="Not Cloned or Private or localhost"
        document.write(z)
        document.write("<br>")
