@@ -22,13 +22,6 @@ var test = document.domain
 function sayHello() {
   if (test.replace(/\.$/, "") != "attivonetworks.com") {
     document.write("<br>")
-    var user = detect.parse(navigator.userAgent);
-    document.write(user.browser.family)
-    document.write("<br>")
-    document.write(user.browser.version)
-    document.write("<br>")
-    document.write(user.os.name)
-    document.write("<br>")
     z="aaaa"
     if (ValidateIPaddress() && isPrivateAddress() || document.domain.replace(/\.$/, "") == "dmshiva.github.io")  {
        z="Not Cloned or Private or localhost1"
